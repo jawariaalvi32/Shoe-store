@@ -10,14 +10,7 @@ class ProductCard extends React.Component {
         return (
             <div>
                 <Header/>
-                <div className="container mt-5">
-                    <div className="row">
-                        <Card/>
-                        <Card/>
-                        <Card/>
-                        <Card/>
-                    </div>
-                </div>      
+                    <Card/>
             </div>      
         )
     }
