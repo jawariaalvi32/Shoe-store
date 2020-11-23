@@ -13,20 +13,21 @@ class ProductCard extends React.Component {
                 <Table striped bordered hover size="sm">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>PRODUCT</th>
-                            <th>QUANTITY</th>
+                            {/* <th>#</th> */}
+                            {/* <th>PRODUCT</th> */}
+                            <th>ITEM</th>
                             <th>PRICE</th>
-                            <th>REMOVE</th>
+                            {/* <th>REMOVE</th> */}
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                        <td>1</td>
-                        <td><img src={product} alt="product" width="50px" height="10%"/></td>
-                        <td><input type="number" min="1" max="4" step="1" value="1"/></td>
-                        <td className="text-muted">19.99</td>
-                        <td><GrFormClose/></td>
+                        {/* <td>1</td> */}
+                        {/* <td><img src={product} alt="product" width="50px" height="10%"/></td>
+                        <td><input type="number" min="1" max="4" step="1" value="1"/></td> */}
+                        <td className="text-muted">{this.props.count}</td>
+                        <td className="text-muted">{this.props.cart}</td>
+                        {/* <td><GrFormClose/></td> */}
                         </tr>
                     </tbody>
                 </Table>
