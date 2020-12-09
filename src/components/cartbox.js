@@ -1,39 +1,46 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import '../App.css';
 import {Table} from 'react-bootstrap'
 import {GrFormClose} from 'react-icons/gr'
-import product from '../images/product1.jpg'
+import {CartContext} from '../context/CartContext'
 
-
-class ProductCard extends React.Component {
+const ProductCard = () => {
     
-    render() {
+    const cartContext = useContext(CartContext)
+    const cart = cartContext ? cartContext[0] : 0
+    console.log(cart)
         return (
             <div className="container mt-5">
                 <Table striped bordered hover size="sm">
                     <thead>
                         <tr>
-                            {/* <th>#</th> */}
-                            {/* <th>PRODUCT</th> */}
+                            <th>#</th>
+                            <th>PRODUCT</th>
+                            <th>COLOR</th>
                             <th>ITEM</th>
                             <th>PRICE</th>
-                            {/* <th>REMOVE</th> */}
+                            <th>REMOVE</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                        {/* <td>1</td> */}
-                        {/* <td><img src={product} alt="product" width="50px" height="10%"/></td>
-                        <td><input type="number" min="1" max="4" step="1" value="1"/></td> */}
-                        <td className="text-muted">{this.props.count}</td>
-                        <td className="text-muted">{this.props.cart}</td>
-                        {/* <td><GrFormClose/></td> */}
+                            {
+                                cart.map(item => (<div key={item.key}>
+                                    <td className="text-muted">{this.props.count}</td>
+                                    <td><img src={item.img[0]} alt="product" width="50px" height="10%"/></td>
+                                    <td>dd</td>
+                                    <td><input type="number" min="1" max="4" step="1" value="1"/></td>
+                                    <td className="text-muted">{item.price}</td>
+                                    <td><GrFormClose/></td>
+                                </div>
+                                ))
+                            }
                         </tr>
                     </tbody>
                 </Table>
             </div>      
         )
-    }
+    
 }
 
 

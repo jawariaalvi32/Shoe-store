@@ -3,6 +3,7 @@ import '../App.css';
 import Header from '../components/header'
 import Cartbox from '../components/cartbox'
 import Checkout from '../components/checkout'
+import CartContextProvider from '../context/CartContext';
 
 
 class Cart extends React.Component {
@@ -11,7 +12,9 @@ class Cart extends React.Component {
         return (
             <div>
                 <Header/>
-                <Cartbox/>
+                <CartContextProvider>
+                    <Cartbox/>
+                </CartContextProvider>
                 <Checkout/>
             </div>      
         )
