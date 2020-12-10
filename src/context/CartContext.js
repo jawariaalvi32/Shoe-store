@@ -3,8 +3,8 @@ export const CartContext = createContext();
 
 const CartContextProvider = (props) => {
     const [cart, setCart] = useState([
-        
     ]);
+    console.log("CartCon",cart)
 
         return (
             <CartContext.Provider value={[cart, setCart]}>

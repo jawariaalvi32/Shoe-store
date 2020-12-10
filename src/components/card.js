@@ -20,7 +20,7 @@ const ProductCard =  () => {
         console.log([...cartContext[0],e])
         setCart([...cartContext[0],e])
     }
-
+console.log("P", cartContext[0])
         return (
             <div>
                 <div className="container mt-5">

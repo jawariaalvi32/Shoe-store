@@ -7,8 +7,8 @@ import {CartContext} from '../context/CartContext'
 const ProductCard = () => {
     
     const cartContext = useContext(CartContext)
-    const cart = cartContext ? cartContext[0] : 0
-    console.log(cart)
+    const cart = cartContext ? cartContext[0] : []
+    console.log("In Cart",cartContext)
         return (
             <div className="container mt-5">
                 <Table striped bordered hover size="sm">
