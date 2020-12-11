@@ -32,6 +32,12 @@ export default class ProductContextProvider extends Component {
                         Product1B,
                         Product1C,
                         Product1D
+                    ],
+                    color: [
+                        'Gray',
+                        'Blue',
+                        'White',
+                        'Black'
                     ]
                 },
                 {
@@ -41,6 +47,10 @@ export default class ProductContextProvider extends Component {
                     img: [
                         Product2A,
                         Product2B
+                    ],
+                    color: [
+                        'Black',
+                        'Gray'
                     ]
                 },
                 {
@@ -51,6 +61,11 @@ export default class ProductContextProvider extends Component {
                         Product3A,
                         Product3B,
                         Product3C
+                    ],
+                    color: [
+                        'Black',
+                        'Green',
+                        'Red'
                     ]
                 },
                 {
@@ -62,6 +77,12 @@ export default class ProductContextProvider extends Component {
                         Product4B,
                         Product4C,
                         Product4D
+                    ],
+                    color: [
+                        'Pink',
+                        'Yellow',
+                        'Brown',
+                        'Green'
                     ]
                 },
                 {
@@ -71,6 +92,10 @@ export default class ProductContextProvider extends Component {
                     img: [
                         Product5A,
                         Product5B
+                    ],
+                    color: [
+                        'Black',
+                        'Gray',
                     ]
                 },
                 {
@@ -80,14 +105,16 @@ export default class ProductContextProvider extends Component {
                     img: [
                         Product6A,
                         Product6B
+                    ],
+                    color: [
+                        'Black',
+                        'White',
                     ]
                 }
         ]
     }
     render() {
-        console.log(this.state)
 
-       console.log(this.props.children)
         return (
             <ProductContext.Provider value={{...this.state}}>
                 {this.props.children}
