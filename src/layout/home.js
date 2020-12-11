@@ -12,11 +12,7 @@ class ProductCard extends React.Component {
         return (
             <div>
                 <Header/>
-                <ProductContextProvider>
-                    <CartContextProvider>
-                       <Card/>
-                    </CartContextProvider>
-                </ProductContextProvider>
+                <Card/>   
             </div>      
         )
     }

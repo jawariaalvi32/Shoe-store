@@ -12,16 +12,12 @@ const ProductCard =  () => {
     const product = productContext ? productContext.product : []
 
     const cartContext = useContext(CartContext)
-    const setCart = cartContext ? cartContext[1] : {}
-
-    // const [count, setCount] = useState(0)
-    // const [cart, setCart] = useState(0)
+    const setCart = cartContext[1]
     const addCart = (e) => {
-        console.log([...cartContext[0],e])
         setCart([...cartContext[0],e])
     }
-console.log("P", cartContext[0])
-        return (
+
+    return (
             <div>
                 <div className="container mt-5">
                     <div className="row  d-flex justify-content-center">

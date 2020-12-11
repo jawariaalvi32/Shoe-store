@@ -7,9 +7,9 @@ import {CartContext} from '../context/CartContext'
 const ProductCard = () => {
     
     const cartContext = useContext(CartContext)
-    const cart = cartContext ? cartContext[0] : []
-    console.log("In Cart",cartContext)
-        return (
+    const cart = cartContext[0]
+
+    return (
             <div className="container mt-5">
                 <Table striped bordered hover size="sm">
                     <thead>
@@ -26,7 +26,7 @@ const ProductCard = () => {
                         <tr>
                             {
                                 cart.map(item => (<div key={item.key}>
-                                    <td className="text-muted">{this.props.count}</td>
+                                    {/* <td className="text-muted">{this.props.count}</td> */}
                                     <td><img src={item.img[0]} alt="product" width="50px" height="10%"/></td>
                                     <td>dd</td>
                                     <td><input type="number" min="1" max="4" step="1" value="1"/></td>

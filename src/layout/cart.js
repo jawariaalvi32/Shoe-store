@@ -12,9 +12,7 @@ class Cart extends React.Component {
         return (
             <div>
                 <Header/>
-                <CartContextProvider>
                     <Cartbox/>
-                </CartContextProvider>
                 <Checkout/>
             </div>      
         )
