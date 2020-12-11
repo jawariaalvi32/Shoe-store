@@ -1,27 +1,29 @@
-import React, {useState} from 'react'
-import {Toast, Row, Col, Button} from 'react-bootstrap'
-export default function Notification() {
-    const [show, setShow] = useState(false);
+import React from 'react';
+import { ToastContainer, toast, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {MdAddShoppingCart} from 'react-icons/md'
+// minified version is also included
+// import 'react-toastify/dist/ReactToastify.min.css';
+
+export default function Notification(){
+
+  const Foo = () => (
+    <div>
+    <span><MdAddShoppingCart className="text-info"/></span>
+    <div  className="text-info">Added to cart</div>
+    </div>
+    )
+  const notify = () => toast(<Foo/>);
   
-    return (
-      <Row>
-        <Col xs={6}>
-          <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
-            <Toast.Header>
-              <img
-                src="holder.js/20x20?text=%20"
-                className="rounded mr-2"
-                alt=""
-              />
-              <strong className="mr-auto">Bootstrap</strong>
-              <small>11 mins ago</small>
-            </Toast.Header>
-            <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
-          </Toast>
-        </Col>
-        <Col xs={6}>
-          <Button onClick={() => setShow(true)}>Add to Cart</Button>
-        </Col>
-      </Row>
-    );
-  }
+  return (
+    <div>
+      <span onClick={notify}>Add to cart</span>
+      <ToastContainer 
+       autoClose={2000} 
+       limit={3}
+       position="bottom-right"
+       transition={Slide}
+       />
+    </div>
+  );
+}
