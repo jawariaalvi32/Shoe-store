@@ -13,13 +13,14 @@ const ProductCard =  () => {
 
     const cartContext = useContext(CartContext)
     const setCart = cartContext[1]
-    const addCart = (e) => {
-        setCart([...cartContext[0],e])
+
+    const addCart = (product) => {
+        setCart([...cartContext[0],product])
     }
 
     return (
             <div>
-                <div className="container mt-5">
+                <div className="container mt-5 mb-5">
                     <div className="row  d-flex justify-content-center">
                         {product.map(prod => <div key={prod.key}>
                             <div className="col-md-6 col-sm-12">
@@ -42,7 +43,7 @@ const ProductCard =  () => {
                                         <Card.Text>
                                         {prod.price}
                                         </Card.Text>
-                                        <Button variant="primary" onClick={() => addCart(prod)}>Add to Cart</Button>
+                                        <Button variant="primary" onClick={() => addCart(prod)}><Notification/></Button>
                                 </Card.Body>
                             </Card>
                             </div>
