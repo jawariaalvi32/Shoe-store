@@ -10,13 +10,13 @@ class Header extends React.Component {
         return (
             <div>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                    <Navbar.Brand><Link to="/">STORE</Link></Navbar.Brand>
+                    <Navbar.Brand><Link to="/" className="link">STORE</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
                         </Nav>
                         <Nav>
-                        <Nav.Link><Link to="/cart">Cart</Link></Nav.Link>
+                        <Nav.Link><Link to="/cart" className="link">Cart</Link></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
