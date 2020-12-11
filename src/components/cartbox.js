@@ -3,41 +3,66 @@ import '../App.css';
 import {Table} from 'react-bootstrap'
 import {GrFormClose} from 'react-icons/gr'
 import {CartContext} from '../context/CartContext'
-
+import {Link} from 'react-router-dom'
+import Checkout from './checkout';
+import {BiArrowBack} from 'react-icons/bi'
+import '../App.css'
 const ProductCard = () => {
     
     const cartContext = useContext(CartContext)
     const cart = cartContext[0]
+    let total = 0
 
+    const remove = (item) => {
+        console.log("jjj", item)
+
+    }
+    console.log(cart)
     return (
-            <div className="container mt-5">
-                <Table striped bordered hover size="sm">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>PRODUCT</th>
-                            <th>COLOR</th>
-                            <th>ITEM</th>
-                            <th>PRICE</th>
-                            <th>REMOVE</th>
-                        </tr>
-                    </thead>
+            <div className="container mt-5 bg-lighter rounded p-5" >
+                <h5 className="text-left mb-5">Shopping Cart</h5>
+
+                {
+                    (cart.length > 0) ? 
+                    <Table size="sm">
                     <tbody>
-                        <tr>
-                            {
-                                cart.map(item => (<div key={item.key}>
-                                    {/* <td className="text-muted">{this.props.count}</td> */}
-                                    <td><img src={item.img[0]} alt="product" width="50px" height="10%"/></td>
-                                    <td>dd</td>
-                                    <td><input type="number" min="1" max="4" step="1" value="1"/></td>
-                                    <td className="text-muted">{item.price}</td>
-                                    <td><GrFormClose/></td>
-                                </div>
-                                ))
-                            }
-                        </tr>
+                        {
+                            cart.map(item => (<tr key={item.id}>
+                                <div className="d-none">{total += parseInt(item.price)}</div>
+                                <td className="w-15"><img src={item.img[item.id - 1]} alt="product" width="100%"/></td>
+                                <td className="align-middle">{item.title}</td>
+                                <td  className="align-middle">{item.color[item.id - 1]}</td>
+                                <td  className="align-middle"><input type="number" min="1" max="4" step="1" value="1"/></td>
+                                <td className="text-muted align-middle">{item.price}</td>
+                                <td  className="align-middle"><span onClick={() => remove(item.id)}><GrFormClose/></span></td>
+                            </tr>
+                            ))
+                        }
                     </tbody>
-                </Table>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><p className="text-muted">Subtotal</p></td>
+                            <td><h6>{total}</h6></td>
+                            <td></td>
+
+                        </tr>
+                    </tfoot>
+                </Table>:
+                <p className="text-muted">Nothing to checkout</p>
+                }
+                <div className="container-fluid">
+                    <div className="row">
+                    <div className="col-md-6">
+                    <Link to="/" className="d-flex"><BiArrowBack className="mt-1"/> Continue Shopping</Link>
+                    </div>
+                    <div className="col-md-6 justify-content-end">
+                    <Checkout/>
+                    </div>
+                    </div>
+                </div>
             </div>      
         )
     

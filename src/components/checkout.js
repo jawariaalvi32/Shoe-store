@@ -6,7 +6,7 @@ class Checkout extends React.Component {
     
     render() {
         return (
-            <div className="m-auto">
+            <div className="float-right">
                <Button>Checkout</Button>
             </div>      
         )
