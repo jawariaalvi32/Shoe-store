@@ -22,7 +22,7 @@ const ProductCard =  () => {
             <div>
                 <div className="container mt-5 mb-5">
                     <div className="row  d-flex justify-content-center">
-                        {product.map(prod => <div key={prod.key}>
+                        {product.map(prod => <div key={prod.id}>
                             <div className="col-md-6 col-sm-12">
                             <Card style={{ width: '21rem' }} className="mt-3">
                                 <Carousel>
