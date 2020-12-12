@@ -11,13 +11,13 @@ const ProductCard = () => {
     
     const cartContext = useContext(CartContext)
     const cart = cartContext[0]
+    const setCart = cartContext[1]
     let total = 0
 
     const remove = (item) => {
-        console.log("jjj", item)
-
+        setCart(cart.splice(item, 1))
     }
-    console.log(cart)
+
     return (
             <div className="container mt-5 bg-lighter rounded p-5" >
                 <h5 className="text-left mb-5">Shopping Cart</h5>
