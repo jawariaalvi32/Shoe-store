@@ -1,17 +1,37 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import '../App.css';
-import {Button} from 'react-bootstrap'
+import { CartContext } from '../context/CartContext';
+import Checked from '../images/checkout.gif'
+import { Button, Modal } from 'react-bootstrap';
 
-class Checkout extends React.Component {
+const Checkout = () => {
     
-    render() {
-        return (
-            <div className="float-right">
-               <Button>Checkout</Button>
-            </div>      
-        )
-    }
-}
+    const cartContext = useContext(CartContext)
+    const setCart = cartContext[1]
+    const [show, setShow] = useState(false);
 
+    const confirmCheckout = (e) => {
+        e.preventDefault()
+        setShow(!show)
+        setCart([])
+    }
+
+        return (
+            <div>
+                <Button onClick={ confirmCheckout }>Checkout</Button>
+                    <Modal show={show}>
+                        <Modal.Body>
+                            <button type="button" className="close mb-2" onClick={() => setShow(!show)}>
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div className="text-center">
+                            <img src={Checked} className="w-25" />
+                            </div>
+                            <p className="text-success text-center mt-3">Order Confirmed !</p>    
+                        </Modal.Body>
+                    </Modal>
+            </div>  
+        )
+}
 
 export default Checkout;

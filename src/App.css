@@ -56,3 +56,6 @@
 .w-15 {
   width: 15% !important;
 }
+.m-0 {
+  margin-right: -90% !important;
+}

@@ -28,6 +28,7 @@ const ProductCard = () => {
                     <tbody>
                         {
                             cart.map(item => (<tr key={item.id}>
+                                {console.log(item.color[item.id - 1])}
                                 <div className="d-none">{total += parseInt(item.price)}</div>
                                 <td className="w-15"><img src={item.img[item.id - 1]} alt="product" width="100%"/></td>
                                 <td className="align-middle">{item.title}</td>
@@ -55,10 +56,10 @@ const ProductCard = () => {
                 }
                 <div className="container-fluid">
                     <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-xs-12">
                     <Link to="/" className="d-flex"><BiArrowBack className="mt-1"/> Continue Shopping</Link>
                     </div>
-                    <div className="col-md-6 justify-content-end">
+                    <div className="col-md-6 col-xs-12 justify-content-end">
                     <Checkout/>
                     </div>
                     </div>
