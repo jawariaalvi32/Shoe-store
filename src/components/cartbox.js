@@ -28,13 +28,12 @@ const ProductCard = () => {
                     <tbody>
                         {
                             cart.map(item => (<tr key={item.id}>
-                                {console.log(item.color[item.id - 1])}
                                 <div className="d-none">{total += parseInt(item.price)}</div>
-                                <td className="w-15"><img src={item.img[item.id - 1]} alt="product" width="100%"/></td>
+                                <td className="w-15"><img src={item.img[0]} alt="product" width="100%"/></td>
                                 <td className="align-middle">{item.title}</td>
-                                <td  className="align-middle">{item.color[item.id - 1]}</td>
-                                <td  className="align-middle"><input type="number" min="1" max="4" step="1" value="1"/></td>
-                                <td className="text-muted align-middle">{item.price}</td>
+                                <td  className="align-middle">{item.color[0]}</td>
+                                <td  className="align-middle"><input type="number" min="1" max="4" step="1"/></td>
+                                <td className="text-muted align-middle">${item.price} </td>
                                 <td  className="align-middle"><span onClick={() => remove(item.id)}><GrFormClose/></span></td>
                             </tr>
                             ))
@@ -46,7 +45,7 @@ const ProductCard = () => {
                             <td></td>
                             <td></td>
                             <td><p className="text-muted">Subtotal</p></td>
-                            <td><h6>{total}</h6></td>
+                            <td><h6>${total}</h6></td>
                             <td></td>
 
                         </tr>

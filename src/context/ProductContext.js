@@ -25,8 +25,8 @@ export default class ProductContextProvider extends Component {
         product: [
                 {
                     id:1,
-                    title:'Carman Salas Brown',
-                    price:'10.99', 
+                    title:'FLUIDFLOW 2.0 SHOES',
+                    price: 80, 
                     img: [
                         Product1A,
                         Product1B,
@@ -42,8 +42,8 @@ export default class ProductContextProvider extends Component {
                 },
                 {
                     id:2,
-                    title:'Carman Salas Brown',
-                    price:'10.99', 
+                    title:'DAILY 3.0 SHOES',
+                    price: 60, 
                     img: [
                         Product2A,
                         Product2B
@@ -55,8 +55,8 @@ export default class ProductContextProvider extends Component {
                 },
                 {
                     id:3,
-                    title:'Carman Salas Brown',
-                    price:'10.99', 
+                    title:'SUPERSTAR SHOES',
+                    price: 85, 
                     img: [
                         Product3A,
                         Product3B,
@@ -71,7 +71,7 @@ export default class ProductContextProvider extends Component {
                 {
                     id:4,
                     title:'Carman Salas Brown',
-                    price:'10.99', 
+                    price: 10, 
                     img: [
                         Product4A,
                         Product4B,
@@ -87,28 +87,28 @@ export default class ProductContextProvider extends Component {
                 },
                 {
                     id:5,
-                    title:'Carman Salas Brown',
-                    price:'10.99', 
+                    title:'NMD_R1 SHOES',
+                    price: 140, 
                     img: [
                         Product5A,
                         Product5B
                     ],
                     color: [
                         'Black',
-                        'Gray',
+                        'Gray'
                     ]
                 },
                 {
                     id:6,
-                    title:'Carman Salas Brown',
-                    price:'10.99', 
+                    title:'SAMBA VEGAN SHOES',
+                    price: 80, 
                     img: [
                         Product6A,
                         Product6B
                     ],
                     color: [
                         'Black',
-                        'White',
+                        'White'
                     ]
                 }
         ]

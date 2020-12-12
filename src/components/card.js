@@ -41,7 +41,7 @@ const ProductCard =  () => {
                                     <Card.Body>
                                         <Card.Title>{prod.title}</Card.Title>
                                         <Card.Text>
-                                        {prod.price}
+                                        ${prod.price}
                                         </Card.Text>
                                         <Button variant="primary" onClick={() => addCart(prod)}><Notification/></Button>
                                 </Card.Body>
