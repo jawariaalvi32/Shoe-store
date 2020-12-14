@@ -22,10 +22,10 @@ const ProductCard = () => {
         e.preventDefault()
         let quantity = (e.target.value == 0 || null) ? 1 : e.target.value
 
-        console.log(e.target.value)
+        console.log(quantity)
         const updatedCart = cart.map((item) => {
-            
-            let price = item.id == id ? item.price = item.price * quantity: item
+            console.log(item.price)
+            let price = item.id == id ? item.total = item.price * quantity: item
             return item
         })
         setCart(updatedCart)
@@ -46,7 +46,8 @@ const ProductCard = () => {
                                 <td className="align-middle">{item.title}</td>
                                 <td  className="align-middle">{item.color[0]}</td>
                                 <td  className="align-middle"><input type="number" min="1" max="4" step="1" onChange={(e) => handleChange(e, item.id)}/></td>
-                                <td className="text-muted align-middle">${item.price} </td>
+                                {/* <td className="text-muted align-middle">${item.price} </td> */}
+                                <td className="text-muted align-middle">${item.total} </td>
                                 <td  className="align-middle"><span onClick={() => remove(item.id)}><GrFormClose/></span></td>
                             </tr>
                             ))
