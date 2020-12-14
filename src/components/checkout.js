@@ -18,7 +18,7 @@ const Checkout = () => {
 
         return (
             <div>
-                <Button onClick={ confirmCheckout }>Checkout</Button>
+                <Button onClick={ confirmCheckout } className="float-right">Checkout</Button>
                     <Modal show={show}>
                         <Modal.Body>
                             <button type="button" className="close mb-2" onClick={() => setShow(!show)}>

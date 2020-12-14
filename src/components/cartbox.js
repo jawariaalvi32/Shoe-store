@@ -17,6 +17,19 @@ const ProductCard = () => {
     const remove = (item) => {
         setCart(cart.splice(item, 1))
     }
+    
+    const handleChange = (e, id) => {
+        e.preventDefault()
+        let quantity = (e.target.value == 0 || null) ? 1 : e.target.value
+
+        console.log(e.target.value)
+        const updatedCart = cart.map((item) => {
+            
+            let price = item.id == id ? item.price = item.price * quantity: item
+            return item
+        })
+        setCart(updatedCart)
+    }
 
     return (
             <div className="container mt-5 bg-lighter rounded p-5" >
@@ -32,7 +45,7 @@ const ProductCard = () => {
                                 <td className="w-15"><img src={item.img[0]} alt="product" width="100%"/></td>
                                 <td className="align-middle">{item.title}</td>
                                 <td  className="align-middle">{item.color[0]}</td>
-                                <td  className="align-middle"><input type="number" min="1" max="4" step="1"/></td>
+                                <td  className="align-middle"><input type="number" min="1" max="4" step="1" onChange={(e) => handleChange(e, item.id)}/></td>
                                 <td className="text-muted align-middle">${item.price} </td>
                                 <td  className="align-middle"><span onClick={() => remove(item.id)}><GrFormClose/></span></td>
                             </tr>

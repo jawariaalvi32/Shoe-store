@@ -8,8 +8,8 @@ class Header extends React.Component {
     
     render() {
         return (
-            <div>
-                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <div className="mb-10">
+                <Navbar collapseOnSelect expand="lg" bg="dark" className="fixed-top shadow-sm bg-dark" variant="dark">
                     <Navbar.Brand><Link to="/" className="link">STORE</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">

@@ -1,9 +1,8 @@
 import React from 'react';
 import '../App.css';
 import Card from '../components/card'
+import Footer from '../components/footer';
 import Header from '../components/header'
-import CartContextProvider from '../context/CartContext';
-import ProductContextProvider from '../context/ProductContext';
 
 
 class ProductCard extends React.Component {
@@ -12,7 +11,8 @@ class ProductCard extends React.Component {
         return (
             <div>
                 <Header/>
-                <Card/>   
+                <Card/> 
+                <Footer/>  
             </div>      
         )
     }
