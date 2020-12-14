@@ -1,5 +1,5 @@
-# Show Store 👟
-
+# Shoe Store 👟
+A simple shoe store application.
 
 ### Built With
 
@@ -7,6 +7,8 @@
 * [React Icons](https://react-icons.github.io/react-icons/)
 * [React Router](https://reactrouter.com/)
 * [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
+
+
 
 
 # Getting Started with Create React App
