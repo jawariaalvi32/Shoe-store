@@ -8,7 +8,7 @@ A simple shoe store application.
 * [React Router](https://reactrouter.com/)
 * [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
 
-
+[Live Demo](https://react-shoesstore.netlify.app/)
 
 
 # Getting Started with Create React App
